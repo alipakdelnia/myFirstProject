@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     var mainLayout: ConstraintLayout? = null
@@ -16,11 +17,23 @@ class MainActivity : AppCompatActivity() {
         mainLayout = findViewById(R.id.root)
         btToast = findViewById(R.id.bt_toast)
         btSnackbar = findViewById(R.id.bt_snackBar)
+        listener()
     }
 
-    private fun listener (){
-        btToast?.setOnClickListener(){
-            Toast.makeText(this,"hello Ali",Toast.LENGTH_LONG).show()
+    private fun  listener(){
+        btToast?.setOnClickListener{
+            Toast.makeText(this,"Hello Ali...\n lets go",Toast.LENGTH_LONG).show()
+        }
+        btSnackbar?.setOnClickListener {
+            Snackbar.make(mainLayout!!, "Ali is in game", Snackbar.LENGTH_LONG)
+                .setAction("ok") {
+                    Toast.makeText(this, "ahmed clicked", Toast.LENGTH_SHORT).show()
+                }
+                .show() // Don’t forget to show!
+        }
+
+
+
         }
     }
-}
+
