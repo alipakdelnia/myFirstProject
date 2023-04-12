@@ -27,8 +27,10 @@ class MainActivity : AppCompatActivity() {
         btSnackbar?.setOnClickListener {
             Snackbar.make(mainLayout!!, "Ali is in game", Snackbar.LENGTH_LONG)
                 .setAction("ok") {
-                    Toast.makeText(this, "ahmed clicked", Toast.LENGTH_SHORT).show()
-                }
+                    Toast.makeText(this, "Here we go", Toast.LENGTH_SHORT).show()
+                }.setActionTextColor(resources.getColor(R.color.purple_500))
+                .setDuration(5000)
+                .setBackgroundTint(resources.getColor(R.color.purple_200))
                 .show() // Don’t forget to show!
         }
 
