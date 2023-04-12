@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <Button
+        android:layout_marginTop="30dp"
+        android:text="boro berim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ali top"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/bt_toast"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TextView
+
+    <Button
+        android:id="@+id/bt_snackBar"
+        app:layout_constraintTop_toBottomOf="@+id/bt_toast"
+        app:layout_constraintStart_toStartOf="@+id/bt_toast"
+        android:layout_marginTop="30dp"
+        android:text="naro berim"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="ali bottom"/>
-
+        android:layout_height="wrap_content"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
