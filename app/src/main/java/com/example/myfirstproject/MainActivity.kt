@@ -1,27 +1,35 @@
 package com.example.myfirstproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    var names = arrayOf("Ali", "Ahmad", "Asghar", "Emad", "Ehsan")
-    var etName: AutoCompleteTextView? = null
+    var btOk: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setData()
+        btOk = findViewById(R.id.bt_ok)
+        listener()
 
     }
 
-    private fun setData() {
-        etName = findViewById(R.id.et_search)
-        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,names)
-        etName?.threshold = 1
-        etName?.setAdapter(adapter)
+    private fun listener() {
+        btOk?.setOnClickListener {
+            var intent=Intent(this,Activity2::class.java)
+            startActivity(intent)
+
+        }
+
     }
 
 }
