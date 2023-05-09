@@ -10,113 +10,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_fullName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Full name"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+  <Button
+      android:id="@+id/bt_ok"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="20dp"
+      android:text="ok"
+      app:layout_constraintTop_toTopOf="parent"/>
 
-    <Button
-        android:id="@+id/bt_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Save"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_fullName" />
-
-<!--    <ImageButton-->
-<!--        android:id="@+id/bt_image"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:src="@mipmap/ic_launcher"-->
-<!--        android:layout_margin="20dp"-->
-<!--        app:layout_constraintStart_toStartOf="@id/bt_save"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/bt_save" />-->
-
-    <EditText
-        android:id="@+id/et_fullName"
-        android:layout_width="314dp"
-        android:layout_height="54dp"
-        android:layout_margin="20dp"
-        android:layout_marginTop="20dp"
-        android:hint="Enter Name"
-        android:imeOptions="actionDone"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/bt_save"
-        app:layout_constraintStart_toStartOf="@id/bt_save"
-        tools:layout_editor_absoluteX="21dp" />
-
-    <!--    User can change it-->
-    <CheckBox
-        android:id="@+id/chk_true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="true"
-        android:padding="5dp"
-        android:text="It's true"
-        app:layout_constraintStart_toStartOf="@id/et_fullName"
-        app:layout_constraintTop_toBottomOf="@id/et_fullName" />
-
-    <!--    User can't change it-->
-    <RadioButton
-        android:id="@+id/rb_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="select"
-        app:layout_constraintStart_toStartOf="@id/chk_true"
-        app:layout_constraintTop_toBottomOf="@id/chk_true" />
-
-    <RadioGroup
-        android:id="@+id/rg_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="@id/rb_select"
-        app:layout_constraintTop_toBottomOf="@id/rb_select">
-
-        <RadioButton
-            android:id="@+id/rb_one"
-            android:layout_width="wrap_content"
+        <EditText
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="one" />
+            android:layout_marginTop="15dp"
+            android:id="@+id/et_name"
+            android:hint="Enter name"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@id/bt_ok"
+            app:layout_constraintStart_toStartOf="@id/bt_ok"
+            app:layout_constraintTop_toBottomOf="@id/bt_ok"/>
 
-        <RadioButton
-            android:id="@+id/rb_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="two" />
-
-    </RadioGroup>
-
-
-    <ToggleButton
-        android:layout_width="wrap_content"
-        android:id="@+id/tb_select"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@id/rg_select"
-        app:layout_constraintTop_toBottomOf="@id/rg_select" />
-
-    <AutoCompleteTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Type a character"
-        android:id="@+id/et_search"
-        android:layout_margin="15dp"
-        app:layout_constraintStart_toStartOf="@id/tb_select"
-        app:layout_constraintTop_toBottomOf="@id/tb_select"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
