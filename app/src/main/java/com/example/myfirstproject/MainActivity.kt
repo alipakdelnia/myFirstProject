@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.widget.Button
-import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     var btWeb: Button? = null
     var btMap: Button? = null
     var btCall: Button? = null
-    var requsetCode=1
+    var requsetCode2=1
 
 
 
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         btContact?.setOnClickListener{
             var contact = Intent(Intent.ACTION_PICK)
             contact.type=ContactsContract.Contacts.CONTENT_TYPE
-            startActivityForResult(contact,requsetCode)
+            startActivityForResult(contact,requsetCode2)
         }
 
         btWeb?.setOnClickListener{
@@ -51,6 +51,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(call)
         }
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode==requsetCode2){
+            if (resultCode== RESULT_OK){
+                Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
 }
