@@ -24,7 +24,7 @@
             android:layout_margin="20dp"
             android:text="custom dialog"
             android:id="@+id/bt_customDialog"
-            app:layout_constraintTop_toBottomOf="@id/bt_alertDialog"
+            app:layout_constraintTop_toBottomOf="@id/bt_alertDialog"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
