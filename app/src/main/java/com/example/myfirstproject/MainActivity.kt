@@ -7,58 +7,42 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    var btAlertDialog: Button?=null
-    var btCustomDialog:Button?=null
+    var progressBar: ProgressBar?=null
+    var progressBar2: ProgressBar?=null
+    var btDownload: Button?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        btAlertDialog=findViewById(R.id.bt_alertDialog)
-        btCustomDialog=findViewById(R.id.bt_customDialog)
+        progressBar=findViewById(R.id.progressBar)
+        progressBar2=findViewById(R.id.progressBar2)
+        btDownload=findViewById(R.id.bt_download)
+        progressBar?.visibility= View.GONE
+        progressBar2?.visibility= View.GONE
         listener()
+
 
     }
 
     private fun listener(){
-        btAlertDialog?.setOnClickListener{
-            alertDialog()
+        btDownload?.setOnClickListener{
+            progressBar?.visibility=View.VISIBLE
+            progressBar2?.visibility=View.VISIBLE
         }
-        btCustomDialog?.setOnClickListener{
-            customDialog()
-        }
-    }
-    private fun alertDialog(){
-        val alertDialog:AlertDialog.Builder= AlertDialog.Builder(this)
-        alertDialog.setTitle("به روز زسانی نرم افزار")
-            .setMessage("آیا میخواهید برنامه را به روزرسانی کنید؟")
-            .setCancelable(false)
-            .setPositiveButton("بله"){_,_ ->
-                Toast.makeText(this,"با موفقیت به روزرسانی شد",Toast.LENGTH_LONG).show()}
-            .setNegativeButton("خیر"){dialog, _ ->
-                dialog.cancel()
-            }
-            .show()
     }
 
-    private fun customDialog(){
-        var dialog:Dialog= Dialog(this)
-        dialog.setTitle("")
-        dialog.setContentView(R.layout.dialog_layout)
-        var tvName:TextView=dialog.findViewById(R.id.tv_name)
-        var btClose:Button=dialog.findViewById(R.id.bt_close)
-        btClose.setOnClickListener{
-            dialog.dismiss()
-        }
-        dialog.show()
+
 }
 
 
-}
+
 

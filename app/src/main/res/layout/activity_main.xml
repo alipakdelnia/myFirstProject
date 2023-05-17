@@ -11,20 +11,36 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/bt_alertDialog"
-            android:text="AlertDialog"
+            android:id="@+id/bt_download"
+            android:text="Download"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="custom dialog"
-            android:id="@+id/bt_customDialog"
-            app:layout_constraintTop_toBottomOf="@id/bt_alertDialog"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="195dp"
+            android:layout_height="15dp"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/progressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
