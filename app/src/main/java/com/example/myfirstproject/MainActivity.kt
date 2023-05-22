@@ -18,37 +18,23 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
-    var webView: WebView? = null
-    var progressBar: ProgressBar? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        webView = findViewById(R.id.webView)
-        progressBar = findViewById(R.id.progressBar)
-        progressBar?.visibility = View.VISIBLE
-        webView?.settings?.javaScriptEnabled = true
-        webView?.settings?.setSupportZoom(true)
-        webView?.loadUrl("https://mp3lyric.us/Global/Musics")
-        webView?.webViewClient = object : WebViewClient() {
-            override fun onPageFinished(view: WebView?, url: String?) {
-                super.onPageFinished(view, url)
-                if (progressBar?.visibility == View.VISIBLE) {
-                    progressBar?.visibility = View.GONE
-                }
-            }
+        var myName=resources.getString(R.string.my_name)
+        var daysOfWeek=findViewById<TextView>(R.id.myNameText)
+        var days = ""
+        var day=resources.getStringArray(R.array.daysOfWeek)
+        for (i in day){
+            days+="$i \n"
         }
-
+        daysOfWeek.text=days
 
     }
 
-    override fun onBackPressed() {
-        if (webView?.canGoBack() == true) {
-            webView?.goBack()
-        } else {
-            super.onBackPressed()
-        }
-    }
+
 
 
 //    }

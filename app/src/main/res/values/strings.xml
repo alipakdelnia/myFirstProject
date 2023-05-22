@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">myFirstProject</string>
+    <string name="my_name">Ali Pakdelnia</string>
+
+    <array name="daysOfWeek">
+        <item>Saturday</item>
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+    </array>
+
 </resources>
