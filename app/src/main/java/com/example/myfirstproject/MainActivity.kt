@@ -14,6 +14,7 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             days+="$i \n"
         }
         daysOfWeek.text=days
+        daysOfWeek.setTextColor(ContextCompat.getColor(this,R.color.yellow))
 
     }
 
