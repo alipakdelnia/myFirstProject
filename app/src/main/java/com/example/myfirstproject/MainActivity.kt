@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
             days+="$i \n"
         }
         daysOfWeek.text=days
-        daysOfWeek.setTextColor(ContextCompat.getColor(this,R.color.yellow))
 
     }
 

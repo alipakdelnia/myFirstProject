@@ -20,6 +20,7 @@
             android:name=".Activity2"
             android:exported="false" />
         <activity
+            android:theme="@style/myTheme"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -13,4 +13,20 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="myStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="myTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimaryDark">@color/gray</item>
+        <item name="android:textColorPrimary">@color/pinky</item>
+        <item name="colorPrimary">@color/teal_200</item>
+        <item name="colorAccent">@color/blue</item>
+        <item name="android:windowBackground">@color/blueBackground</item>
+        <item name="android:navigationBarColor">@color/purple_500</item>
+    </style>
 </resources>
