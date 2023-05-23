@@ -7,7 +7,10 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.webkit.ConsoleMessage
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
@@ -24,23 +27,33 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var myName=resources.getString(R.string.my_name)
-        var daysOfWeek=findViewById<TextView>(R.id.myNameText)
-        var days = ""
-        var day=resources.getStringArray(R.array.daysOfWeek)
-        for (i in day){
-            days+="$i \n"
-        }
-        daysOfWeek.text=days
+
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.option_menu,menu)
+        return true
+    }
 
-
-
-//    }
-
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.action_search ->{
+                showMessage("search progressing")
+            }
+            R.id.action_profile ->{
+                showMessage("profile creating")
+            }
+            R.id.action_setting -> {
+                showMessage("setting enabled")
+            }
+        }
+        return true
+    }
+    private fun showMessage(message: String){
+        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
+    }
 }
 
 
