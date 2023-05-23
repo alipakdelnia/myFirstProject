@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">myFirstProject</string>
     <string name="my_name">Ali Pakdelnia</string>
+    <string name="search">search</string>
+    <string name="setting_clicked">Setting clicked</string>
+    <string name="profile_clicked">Profile clicked</string>
 
     <array name="daysOfWeek">
         <item>Saturday</item>
