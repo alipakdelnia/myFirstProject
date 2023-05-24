@@ -5,25 +5,17 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".MainActivity"
     android:background="@drawable/background_shape">
-
+    
     <Button
-        android:id="@+id/bt_MyName"
-        android:layout_width="255dp"
-        android:layout_height="58dp"
-        android:background="@drawable/bt_green_selector"
-        android:text="@string/my_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/bt_copy"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/bt_context"
+        android:text="@string/select"
+        android:layout_margin="100dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/press_it"
-        app:layout_constraintTop_toBottomOf="@id/bt_MyName" />
+        android:layout_height="wrap_content"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

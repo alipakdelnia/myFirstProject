@@ -1,89 +1,61 @@
 package com.example.myfirstproject
 
-import android.app.AlertDialog
-import android.app.Dialog
-import android.content.Intent
-import android.net.Uri
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.view.ContextMenu
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.webkit.ConsoleMessage
-import android.webkit.WebView
-import android.webkit.WebViewClient
-import android.widget.Button
-import android.widget.ProgressBar
-import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+
 
 class MainActivity : AppCompatActivity() {
-
-    var bt_copy: Button? = null
+    var bt_context=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        bt_MyName = findViewById(R.id.bt_MyName)
-        bt_copy?.setOnCreateContextMenuListener(this)
-
+         bt_context=findViewById(R.id.bt_context)
+         setSupportActionBar(bt_context)
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.option_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_search -> {
-                showMessage("search progressing")
-            }
-            R.id.action_profile -> {
-                showMessage("profile creating")
-            }
-            R.id.action_setting -> {
-                showMessage("setting enabled")
-            }
-        }
-        return true
-    }
-
-    private fun showMessage(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-    }
 
     override fun onCreateContextMenu(
         menu: ContextMenu?,
         v: View?,
         menuInfo: ContextMenu.ContextMenuInfo?
     ) {
-        menu?.setHeaderTitle("more option")
-        menu?.add("Edit")
-        menu?.add("copy")
-        menu?.add("delete")
+        super.onCreateContextMenu(menu, v, menuInfo)
+        val inflater = menuInflater
+        inflater.inflate(R.menu.float_menu, menu)
+
+    }
+
+    @Override
+
+
+    private fun showMessage(message: String){
+        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
-        when (item.title) {
-             "Edit" -> {
-                showMessage("ویرایش شد")
+        when (item.title){
+            "edit" ->{
+                showMessage("edit")
             }
-            "copy" -> {
-                showMessage("کپی شد")
+            "copy" ->{
+                showMessage("copy")
             }
-            "delete" -> {
-                showMessage("پاک شد")
+            "delete" ->{
+                showMessage("delete")
             }
+
         }
         return true
     }
+
+
 }
 
 
