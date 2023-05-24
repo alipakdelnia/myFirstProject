@@ -10,7 +10,7 @@
         android:title="@string/cut"
         />
     <item
-        android:id="@+id/action_Past"
+        android:id="@+id/action_Paste"
         android:title="@string/past"
         />
 

@@ -6,17 +6,18 @@ import android.os.Bundle
 import android.view.ContextMenu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
-    var bt_context=null
+    var bt_context:Button?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
          bt_context=findViewById(R.id.bt_context)
-         setSupportActionBar(bt_context)
+         registerForContextMenu(bt_context)
 
     }
 
@@ -40,15 +41,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
-        when (item.title){
-            "edit" ->{
-                showMessage("edit")
-            }
-            "copy" ->{
+        val id = item.itemId
+        when (id){
+            R.id.action_Copy ->{
                 showMessage("copy")
             }
-            "delete" ->{
-                showMessage("delete")
+            R.id.action_Cut ->{
+                showMessage("cut")
+            }
+            R.id.action_Paste ->{
+                showMessage("paste")
             }
 
         }
