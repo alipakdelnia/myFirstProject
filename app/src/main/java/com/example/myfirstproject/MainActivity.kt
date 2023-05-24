@@ -7,6 +7,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -22,27 +23,29 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
-
+    var bt_copy: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+//        bt_MyName = findViewById(R.id.bt_MyName)
+        bt_copy?.setOnCreateContextMenuListener(this)
 
 
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
-        inflater.inflate(R.menu.option_menu,menu)
+        inflater.inflate(R.menu.option_menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId){
-            R.id.action_search ->{
+        when (item.itemId) {
+            R.id.action_search -> {
                 showMessage("search progressing")
             }
-            R.id.action_profile ->{
+            R.id.action_profile -> {
                 showMessage("profile creating")
             }
             R.id.action_setting -> {
@@ -51,8 +54,35 @@ class MainActivity : AppCompatActivity() {
         }
         return true
     }
-    private fun showMessage(message: String){
-        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
+
+    private fun showMessage(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        menu?.setHeaderTitle("more option")
+        menu?.add("Edit")
+        menu?.add("copy")
+        menu?.add("delete")
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.title) {
+             "Edit" -> {
+                showMessage("ویرایش شد")
+            }
+            "copy" -> {
+                showMessage("کپی شد")
+            }
+            "delete" -> {
+                showMessage("پاک شد")
+            }
+        }
+        return true
     }
 }
 
